@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercícios de Manipulação do DOM</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Exercícios de Manipulação do DOM</h1>
+
+    <!-- Exercício 1 -->
+    <div class="box">
+      <h2>Exercício 1: Alterando Texto e Cor</h2>
+      <p id="texto">Clique no botão para mudar este texto e a cor.</p>
+      <button onclick="alterarTextoCor()">Alterar</button>
+    </div>
+
+    <!-- Exercício 2 -->
+    <div class="box">
+      <h2>Exercício 2: Criando e Removendo Elementos</h2>
+      <button onclick="adicionarElemento()">Adicionar Parágrafo</button>
+      <button onclick="removerElemento()">Remover Parágrafo</button>
+      <div id="container"></div>
+    </div>
+
+    <!-- Exercício 3 -->
+    <div class="box">
+      <h2>Exercício 3: Lista Interativa</h2>
+      <input type="text" id="itemInput" placeholder="Digite um item" />
+      <button onclick="adicionarItem()">Adicionar</button>
+      <ul id="lista"></ul>
+    </div>
+
+    <!-- Exercício 4 -->
+    <div class="box">
+      <h2>Exercício 4: Bhaskara</h2>
+      <p>
+        Crie 3 inputs para <strong>a</strong>, <strong>b</strong> e
+        <strong>c</strong>. Ao clicar no botão, calcule as raízes da equação
+        usando Bhaskara. Mostre o resultado dentro de uma tag
+        <code>h2</code> com: <span style="color: #2fff">cor azul</span> se tiver
+        uma raiz real, <span style="color: darkgreen">verde escuro</span> se
+        tiver duas raízes reais, e <span style="color: red">vermelho</span> se
+        não houver raízes reais (junto com a frase: "Não existem raízes reais").
+      </p>
+      <p>
+        <strong>Observações para testar:</strong><br />
+        - Para duas raízes reais: a = 1, b = -3, c = 2 → (x₁ = 2, x₂ = 1)<br />
+        - Para uma raiz real (delta = 0): a = 1, b = 2, c = 1 → (x₁ = x₂ =
+        -1)<br />
+        - Para nenhuma raiz real (delta < 0): a = 1, b = 2, c = 3 → "Não existem
+        raízes reais"
+      </p>
+      <input type="number" id="a" placeholder="Valor de a (ex: 1)" />
+      <input type="number" id="b" placeholder="Valor de b (ex: -3)" />
+      <input type="number" id="c" placeholder="Valor de c (ex: 2)" />
+      <button onclick="calcularBhaskara()">Calcular</button>
+      <h2 id="resultadoBhaskara"></h2>
+    </div>
+
+ <!-- Exercício 5 -->
+<div class="box">
+  <h2>Exercício 5: Consumo de Combustível</h2>
+  <p>
+    Um carro faz uma certa quantidade de km por litro, tem um tanque com
+    determinada capacidade e a gasolina custa um valor específico.
+    <br>O usuário deve preencher os dados abaixo e descobrir:
+    <ul>
+      <li>Quanto custará percorrer a distância desejada.</li>
+      <li>Quantos tanques serão necessários para chegar</li>
+    </ul>
+  </p>
+  <input type="number" id="distancia" placeholder="Distância a percorrer (km)" />
+  <input type="number" id="consumo" placeholder="Consumo do carro (km/L)" />
+  <input type="number" id="capacidade" placeholder="Capacidade do tanque (L)" />
+  <input type="number" id="precoGasolina" placeholder="Preço da gasolina (R$)" step="0.01" />
+  <button onclick="calcularConsumo()">Calcular Consumo</button>
+  <div id="resultadoConsumo" style="margin-top:10px; font-weight:bold;"></div>
+</div>
+
+
+    <!-- Exercício 6 -->
+    <div class="box">
+      <h2>Exercício 6: Par ou Ímpar</h2>
+      <p>
+        Crie um input numérico. Ao clicar no botão, verifique se o número é par
+        ou ímpar. Mostre o resultado em um alert().
+      </p>
+      <input type="number" id="numeroParImpar" placeholder="Digite um número" />
+      <button onclick="verificarParImpar()">Verificar</button>
+    </div>
+
+    <!-- Exercício 7 -->
+    <div class="box">
+      <h2>Exercício 7: Maior de Três Números</h2>
+      <p>
+        Crie 3 inputs numéricos. Ao clicar no botão, mostre em uma tag span qual
+        deles é o maior.
+        <input type="number" id="num1" placeholder="Número 1" />
+        <input type="number" id="num2" placeholder="Número 2" />
+        <input type="number" id="num3" placeholder="Número 3" />
+        <button onclick="verificarMaior()">Verificar Maior</button>
+      </p>
+
+      <p id="resultadoMaior"></p>
+    </div>
+
+    <!-- Exercício 8 -->
+    <div class="box">
+      <h2>Exercício 8: Média de Notas</h2>
+      <p>
+        Crie 3 inputs numéricos para notas. Calcule a média e mostre em uma tag
+        h3: "Aprovado" se média ≥ 7 "Recuperação" se entre 5 e 6,9 "Reprovado"
+        se menor que 5
+      </p>
+      <input type="number" id="nota1" placeholder="Nota 1" />
+      <input type="number" id="nota2" placeholder="Nota 2" />
+      <input type="number" id="nota3" placeholder="Nota 3" />
+      <button onclick="calcularMedia()">Calcular Média</button>
+      <h3 id="resultadoMedia"></h3>
+    </div>
+
+    <!-- Exercício 9 -->
+    <div class="box">
+      <h2>Exercício 9: Tabuada</h2>
+      <p>
+        Crie um input para número. Gere a tabuada de 1 a 10 e mostre dentro de
+        uma tag ul e tags li.
+      </p>
+      <input type="number" id="numeroTabuada" placeholder="Digite um número" />
+      <button onclick="gerarTabuada()">Gerar Tabuada</button>
+      <ul id="resultadoTabuada"></ul>
+    </div>
+
+    <!-- Exercício 10 -->
+    <div class="box">
+      <h2>Exercício 10: Contador</h2>
+      <p>
+        Crie dois inputs (início e fim). Ao clicar no botão, mostre em uma tag
+        div todos os números do intervalo, separados por vírgula.
+      </p>
+      <input type="number" id="inicio" placeholder="Início" />
+      <input type="number" id="fim" placeholder="Fim" />
+      <button onclick="contarNumeros()">Contar</button>
+      <div id="resultadoContador"></div>
+    </div>
+
+    <!-- Exercício 11 -->
+    <div class="box">
+      <h2>Exercício 11: Verificar Palíndromo</h2>
+      <p>
+        Crie um input de texto. Ao clicar, mostre em um alert() se a
+        palavra/frase é palíndromo (igual de trás pra frente).
+      </p>
+      <input
+        type="text"
+        id="textoPalindromo"
+        placeholder="Digite uma palavra"
+      />
+      <button onclick="verificarPalindromo()">Verificar</button>
+    </div>
+
+    <!-- Exercício 12 -->
+    <div class="box">
+      <h2>Exercício 12: IMC</h2>
+      <p>
+        Crie dois inputs (peso, altura). Calcule o IMC = peso / altura². Mostre
+        dentro de uma tag span com a cor vermelha o valor e a classificação
+        (baixo peso, normal, sobrepeso, obesidade).
+      </p>
+      <input type="number" id="peso" placeholder="Peso (kg)" step="0.1" />
+      <input type="number" id="altura" placeholder="Altura (m)" step="0.01" />
+      <button onclick="calcularIMC()">Calcular IMC</button>
+      <p id="resultadoIMC"></p>
+    </div>
+
+    <!-- Exercício 13 -->
+    <div class="box">
+      <h2>Exercício 13: Criação Dinâmica de Botão</h2>
+      <p>
+        Crie um botão "Criar". Ao clicar, o JS deve criar outro botão dentro da
+        div. Esse novo botão, quando clicado, deve mostrar um alert("Novo botão
+        clicado!").
+      </p>
+      <button onclick="criarBotao()">Criar Botão</button>
+      <div id="areaBotoes"></div>
+    </div>
+
+    <!-- Exercício 14 -->
+    <div class="box">
+      <h2>Exercício 14: Contador de Cliques</h2>
+      <p>
+        Crie um botão "Clique aqui" que tenha a letra branca e o fundo azul com
+        a propriedade hover. Cada clique incrementa um contador. Mostre o total
+        dentro de uma tag span.
+      </p>
+      <button onclick="contarCliques()">Clique aqui</button>
+      <p>Total de cliques: <span id="contadorCliques">0</span></p>
+    </div>
+
+    <!-- Exercício 15 -->
+    <div class="box">
+      <h2>Exercício 15: Relógio Digital</h2>
+      <p>
+        Crie um botão "Mostrar Hora". Ao clicar, mostre dentro de uma tag h2 o
+        horário atual (HH:MM:SS).
+      </p>
+      <button onclick="mostrarHora()">Mostrar Hora</button>
+      <h2 id="horaAtual"></h2>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
